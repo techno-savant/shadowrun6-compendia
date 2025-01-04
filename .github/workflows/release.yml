@@ -17,7 +17,7 @@ jobs:
               env:
                   URL: https://github.com/${{github.repository}}
                   MANIFEST: https://github.com/${{github.repository}}/releases/latest/download/system.json
-                  DOWNLOAD: https://github.com/${{github.repository}}/releases/download/${{github.event.release.tag_name}}/shadowrun6-elysium.zip
+                  DOWNLOAD: https://github.com/${{github.repository}}/releases/download/${{github.event.release.tag_name}}/shadowrun-6-compendia.zip
                   VERSION: ${{github.event.release.tag_name}}
               run: |
                     sudo apt-get install moreutils
@@ -36,7 +36,7 @@ jobs:
                   npm ci
                   gulp build
                   npm run build:db
-                  zip -r ./shadowrun6-elysium.zip system.json template.json LICENSE README.md README-DEV.md dist/ packs/ --exclude "packs/_source/*"
+                  zip -r ./shadowrun-6-compendia.zip module.json packs/
 
             - name: Update Release with Files
               uses: ncipollo/release-action@v1
@@ -47,19 +47,19 @@ jobs:
                   draft: false
                   prerelease: false
                   token: ${{ secrets.TOKEN }}
-                  artifacts: './system.json, ./shadowrun6-elysium.zip'
+                  artifacts: './module.json, ./shadowrun-6-compendia.zip'
                   tag: ${{ github.event.release.tag_name }}
                   body: ${{ github.event.release.body }}
 
-            - name: Deploy Release
-              uses: fjogeleit/http-request-action@v1
-              env:
-                  MINIMUM: ${{ fromJson(env.MANIFEST_JSON).compatibility.minimum }}
-                  VERIFIED: ${{ fromJson(env.MANIFEST_JSON).compatibility.verified }}
-                  MAXIMUM: 12
-              with:
-                  url: 'https://api.foundryvtt.com/_api/packages/release_version'
-                  method: 'POST'
-                  contentType: 'application/json'
-                  customHeaders: '{"Authorization": "${{ secrets.FVTT_PACKAGE_RELEASE_TOKEN }}"}'
-                  data: '{"id": "shadowrun6-elysium", "release":{"version":"v${{github.event.release.tag_name}}","manifest":"https://github.com/SR5-FoundryVTT/SR5-FoundryVTT/releases/latest/download/system.json","notes":"https://github.com/SR5-FoundryVTT/SR5-FoundryVTT/releases/tag/${{github.event.release.tag_name}}","compatibility":{"minimum":"${{ env.MINIMUM }}","verified":"${{ env.VERIFIED }}","maximum":"${{ env.MAXIMUM }}"}}}'
+#            - name: Deploy Release
+#              uses: fjogeleit/http-request-action@v1
+#              env:
+#                  MINIMUM: ${{ fromJson(env.MANIFEST_JSON).compatibility.minimum }}
+#                  VERIFIED: ${{ fromJson(env.MANIFEST_JSON).compatibility.verified }}
+#                  MAXIMUM: 12
+#              with:
+#                  url: 'https://api.foundryvtt.com/_api/packages/release_version'
+#                  method: 'POST'
+#                  contentType: 'application/json'
+#                  customHeaders: '{"Authorization": "${{ secrets.FVTT_PACKAGE_RELEASE_TOKEN }}"}'
+#                  data: '{"id": "shadowrun-6-compendia", "release":{"version":"v${{github.event.release.tag_name}}","manifest":"https://github.com/SR5-FoundryVTT/SR5-FoundryVTT/releases/latest/download/system.json","notes":"https://github.com/SR5-FoundryVTT/SR5-FoundryVTT/releases/tag/${{github.event.release.tag_name}}","compatibility":{"minimum":"${{ env.MINIMUM }}","verified":"${{ env.VERIFIED }}","maximum":"${{ env.MAXIMUM }}"}}}'
