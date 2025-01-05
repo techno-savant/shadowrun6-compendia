@@ -1,0 +1,32 @@
+{
+  "name": "shadowrun-6-compendia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:db": "node ./utils/packs.mjs package pack",
+    "test": "tsc --project tsconfig.json --noEmit",
+    "lint": "npx eslint .",
+    "lint:fix": "npx eslint . --fix",
+    "lint:errors": "npx eslint . --quiet",
+    "lint:errors:fix": "npx eslint . --quiet --fix",
+    "prettier": "npx prettier --write **/*.ts",
+    "generate-id": "node utils/generate-id.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/techno-savant/shadowrun6-compendia.git"
+  },
+  "private": true,
+  "devDependencies": {
+    "@foundryvtt/foundryvtt-cli": "^1.0.3",
+    "gulp": "^5.0.0",
+    "uuid": "^11.0.3",
+    "yargs": "^17.7.2"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "del": "^8.0.0",
+    "fs-extra": "^11.2.0"
+  }
+}

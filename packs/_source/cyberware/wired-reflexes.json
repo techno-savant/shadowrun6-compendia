@@ -1,0 +1,187 @@
+{
+  "id": "bc36a2fd-9ffe-4355-9453-6d75562df70d",
+  "_key": "!items!bc36a2fd-9ffe-4355-9453-6d75562df70d",
+  "name": "Wired Reflexes",
+  "type": "cyberware",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "description": {
+      "value": "<p>This highly invasive, painful, life-changing operation adds a multitude of neural boosters and adrenaline stimulators in strategic locations throughout your body to catapult you into a whole new world where everything around you seems to move in slow motion. The system includes both manual and wireless triggers to turn the wired reflexes on and off; activating or deactivating the trigger manually requires a Major Action, while doing so wirelessly is a Minor Action. When activated, each rating point of wired reflexes gives you +1 Reaction (with accompanying bonus to your Initiative Score) and 1 additional Initiative Die (with accompanying Minor Action). Wired reflexes are incompatible with augmentations that affect Reaction or Initiative.</p><p>Wireless Bonus:  The system is compatible with wireless reaction enhancers, and activation or deactivation of the system requires a Minor Action.",
+      "chat": "",
+      "source": ""
+    },
+    "technology": {
+      "rating": 1,
+      "availability": "",
+      "quantity": 1,
+      "cost": null,
+      "equipped": true,
+      "conceal": {
+        "base": 0,
+        "value": 0
+      },
+      "condition_monitor": {
+        "value": 0,
+        "max": 9
+      },
+      "wireless": true,
+      "networkController": null
+    },
+    "action": {
+      "type": "",
+      "test": "SuccessTest",
+      "categories": [],
+      "attribute": "",
+      "attribute2": "",
+      "skill": "",
+      "armor": false,
+      "spec": "",
+      "mod": 0,
+      "mod_description": "",
+      "roll_mode": "",
+      "limit": {
+        "value": 0,
+        "base": 0,
+        "attribute": ""
+      },
+      "threshold": {
+        "value": 0,
+        "base": 0
+      },
+      "extended": false,
+      "damage": {
+        "type": {
+          "value": "",
+          "base": ""
+        },
+        "element": {
+          "value": "",
+          "base": ""
+        },
+        "value": 0,
+        "base": 0,
+        "ap": {
+          "value": 0,
+          "base": 0
+        },
+        "base_formula_operator": "add",
+        "attribute": "",
+        "source": {
+          "actorId": "",
+          "itemId": "",
+          "itemType": "",
+          "itemName": ""
+        }
+      },
+      "opposed": {
+        "type": "",
+        "test": "",
+        "attribute": "",
+        "attribute2": "",
+        "skill": "",
+        "armor": false,
+        "mod": 0,
+        "description": "",
+        "resist": {
+          "test": "",
+          "skill": "",
+          "attribute": "",
+          "attribute2": "",
+          "armor": false,
+          "mod": 0
+        }
+      },
+      "followed": {
+        "test": "",
+        "attribute": "",
+        "attribute2": "",
+        "skill": "",
+        "armor": false,
+        "mod": 0
+      },
+      "modifiers": []
+    },
+    "armor": {
+      "value": 0,
+      "mod": true,
+      "acid": 0,
+      "cold": 0,
+      "fire": 0,
+      "electricity": 0,
+      "radiation": 0,
+      "temp": 0,
+      "hardened": false,
+      "capacity": 0
+    },
+    "importFlags": {
+      "name": "",
+      "type": "",
+      "subType": "",
+      "isFreshImport": false,
+      "isImported": false
+    },
+    "essence": 1,
+    "grade": "standard",
+    "capacity": 0
+  },
+  "effects": [
+    {
+      "name": "Improved Initiative",
+      "_id": "o7MFYLUmAdfaN3X6",
+      "_key": "!items!o7MFYLUmAdfaN3X6",
+      "changes": [
+        {
+          "key": "system.initiative.meatspace.dice",
+          "mode": 0,
+          "value": "1",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.reaction",
+          "mode": 0,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "transfer": true,
+      "statuses": [],
+      "flags": {
+        "shadowrun6-elysium": {
+          "onlyForWireless": false,
+          "onlyForEquipped": true,
+          "applyTo": "actor"
+        }
+      },
+      "icon": null,
+      "tint": null
+    }
+  ],
+  "folder": null,
+  "flags": {
+    "core": {},
+    "exportSource": {
+      "system": "shadowrun6-elysium",
+      "coreVersion": "11.315",
+      "systemVersion": "0.0.4"
+    }
+  },
+  "_stats": {
+    "systemId": "shadowrun6-elysium",
+    "systemVersion": "0.0.4",
+    "coreVersion": "11.315",
+    "createdTime": 1735355387672,
+    "modifiedTime": 1736031348960,
+    "lastModifiedBy": "techno-savant"
+  }
+}
